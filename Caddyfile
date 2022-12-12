@@ -1,0 +1,16 @@
+locahost {
+  root * /app/public
+  encode zstd gzip
+
+  handle /__/auth/ {
+    reverse_proxy dreem-me-staging.firebaseapp.com
+  }
+  handle {
+    try_files {path} /index.html
+    file_server
+  }
+
+  header / {
+    Cache-Control "no-cache, no-store, must-revalidate"
+  }
+}

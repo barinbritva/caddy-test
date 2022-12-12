@@ -1,0 +1,12 @@
+version: '3.7'
+
+services:
+  client:
+    container_name: caddy-test
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3007:80"
+      # - "443:443"
