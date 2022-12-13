@@ -1,8 +1,8 @@
-locahost {
+localhost {
   root * /app/public
   encode zstd gzip
 
-  handle /__/auth/ {
+  handle /__/auth/* {
     reverse_proxy dreem-me-staging.firebaseapp.com
   }
   handle {
