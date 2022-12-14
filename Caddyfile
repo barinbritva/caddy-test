@@ -3,8 +3,11 @@ localhost:443 {
   encode zstd gzip
 
   handle /__/auth/* {
-    reverse_proxy dreem-me-staging.firebaseapp.com
+    reverse_proxy https://dreem-me-staging.firebaseapp.com {
+      header_up Host "dreem-me-staging.firebaseapp.com"
+    }
   }
+
   handle {
     try_files {path} /index.html
     file_server
