@@ -4,5 +4,5 @@ docker-compose up
 ```
 
 Нужно:
-* сайт открылся локально `http://localhost:3007`
-* по урлу `/__/auth/handler` увидеть ответ от Firebase, по остальным контент файла `index.html`
+* открыть `https://dreem-me-staging.firebaseapp.com/__/auth/handler` и посмотреть ответ. Там будет `Unable to process request due to missing initial state. This may happen if browser sessionStorage is inaccessible or accidentally cleared.`
+* открыть `https://localhost:3007/__/auth/handler` там должен быть такой же ответ, но там ошибка сервера `421 - Misdirected Request (E2815)`
