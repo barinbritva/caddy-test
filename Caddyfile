@@ -1,8 +1,4 @@
-{
-  auto_https off
-}
-
-localhost:80 {
+localhost:443 {
   root * /app/public
   encode zstd gzip
 
